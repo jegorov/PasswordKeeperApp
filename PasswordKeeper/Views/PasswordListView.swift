@@ -57,7 +57,7 @@ struct PasswordListView: View {
                 Spacer()
 
                 Button("Regenerate UUIDs") {
-                    regenerateUUIDsAndUpdateJson()
+                    regenerateUUIDs()
                 }
                 .padding()
             }
@@ -96,6 +96,24 @@ struct PasswordListView: View {
         passwords = updatedPasswords
         selectedPasswords = []
     }
+    
+    func regenerateUUIDs() {
+
+        // Load the updated passwords from the JSON file
+        if let loadedPasswords = PasswordStorage.loadPasswords() {
+            passwords = loadedPasswords
+        }
+        
+        var updatedPasswords: [PasswordItem] = []
+
+        for password in passwords {
+            updatedPasswords.append(PasswordItem(id: UUID(), name: password.name, login: password.login, password: password.password))
+        }
+
+        // Save the updated passwords to the JSON file
+        PasswordStorage.savePasswords(updatedPasswords)
+    }
+
     
     private func deleteSelectedPasswords() {
            passwords = passwords.filter { !selectedPasswords.contains($0.id) }

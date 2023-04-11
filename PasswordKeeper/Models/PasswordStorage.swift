@@ -5,10 +5,15 @@ struct PasswordStorage {
     static let fileName = "passwords"
     static let fileExtension = "json"
 
+    
     static func getDocumentDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
+    
+    static func getPasswordsFileURL() -> URL? {
+           return getDocumentDirectory().appendingPathComponent(fileName).appendingPathExtension(fileExtension)
+       }
 
     static func loadPasswords() -> [PasswordItem]? {
         let url = getDocumentDirectory().appendingPathComponent(fileName).appendingPathExtension(fileExtension)
