@@ -109,7 +109,8 @@ struct PasswordListView: View {
         for password in passwords {
             updatedPasswords.append(PasswordItem(id: UUID(), name: password.name, login: password.login, password: password.password))
         }
-
+        
+        passwords = updatedPasswords
         // Save the updated passwords to the JSON file
         PasswordStorage.savePasswords(updatedPasswords)
     }
