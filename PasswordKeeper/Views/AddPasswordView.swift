@@ -1,11 +1,3 @@
-//
-//  AddPasswordView.swift
-//  PasswordKeeper
-//
-//  Created by Jegor on 11.04.2023.
-//
-
-import Foundation
 import SwiftUI
 
 struct AddPasswordView: View {
@@ -18,22 +10,35 @@ struct AddPasswordView: View {
     
     var body: some View {
         VStack {
-            VStack {
+            Text("Add Password")
+                .font(.largeTitle)
+                .padding()
+
+            Form {
                 TextField("Name", text: $name)
                 TextField("Login", text: $login)
                 SecureField("Password", text: $password)
-            }.padding()
-            
-            Button(action: {
-                let passwordItem = PasswordItem(id: UUID(), name: name, login: login, password: password)
-                passwords.append(passwordItem)
-                JSONFileManager.shared.save(passwords: passwords)
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Text("Save")
-            }.padding()
-            
-            Spacer()
+            }
+            .padding()
+
+            HStack {
+                Button("Cancel") {
+                    presentationMode.wrappedValue.dismiss()
+                }
+
+                Spacer()
+
+                Button("Save") {
+                    let newItem = PasswordItem(id: UUID(), name: name, login: login, password: password)
+                    passwords.append(newItem)
+                    JSONFileManager.shared.save(passwords: passwords)
+                    presentationMode.wrappedValue.dismiss()
+                }
+                .disabled(name.isEmpty || login.isEmpty || password.isEmpty)
+            }
+            .padding()
         }
+        .padding()
+        .frame(minWidth: 400, minHeight: 300)
     }
 }

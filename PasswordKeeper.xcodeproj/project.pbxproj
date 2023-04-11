@@ -13,6 +13,7 @@
 		BE33410B29E5E02100C791E7 /* JSONFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33410A29E5E02100C791E7 /* JSONFileManager.swift */; };
 		BE33410D29E5E05900C791E7 /* PasswordRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33410C29E5E05900C791E7 /* PasswordRowView.swift */; };
 		BE33410F29E5E35E00C791E7 /* AddPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33410E29E5E35E00C791E7 /* AddPasswordView.swift */; };
+		BE33411229E5EF4300C791E7 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33411129E5EF4300C791E7 /* CheckboxToggleStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BE33410A29E5E02100C791E7 /* JSONFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileManager.swift; sourceTree = "<group>"; };
 		BE33410C29E5E05900C791E7 /* PasswordRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRowView.swift; sourceTree = "<group>"; };
 		BE33410E29E5E35E00C791E7 /* AddPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPasswordView.swift; sourceTree = "<group>"; };
+		BE33411129E5EF4300C791E7 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				BE3340DE29E5C72300C791E7 /* PasswordListView.swift */,
 				BE33410C29E5E05900C791E7 /* PasswordRowView.swift */,
 				BE33410E29E5E35E00C791E7 /* AddPasswordView.swift */,
+				BE33411129E5EF4300C791E7 /* CheckboxToggleStyle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				BE33410B29E5E02100C791E7 /* JSONFileManager.swift in Sources */,
 				BE3340DF29E5C72300C791E7 /* PasswordListView.swift in Sources */,
 				BE33410F29E5E35E00C791E7 /* AddPasswordView.swift in Sources */,
+				BE33411229E5EF4300C791E7 /* CheckboxToggleStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

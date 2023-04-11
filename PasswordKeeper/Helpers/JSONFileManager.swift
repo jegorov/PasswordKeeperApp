@@ -35,7 +35,6 @@ class JSONFileManager {
     
     private func getApplicationSupportDirectory() -> URL {
         let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-        let url = URL(fileURLWithPath: "../Resources/passwords.json")
         print("Current directory: \(url.path)")
 
         let appSupportSubfolder = url.appendingPathComponent(Bundle.main.bundleIdentifier!, isDirectory: true)
