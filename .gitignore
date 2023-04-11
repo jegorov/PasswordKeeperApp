@@ -1,0 +1,15 @@
+# Xcode
+#
+# Ignore Xcode temporary files, user-specific files, and
+# Xcode 12 cache files.
+
+# Build products
+build/
+DerivedData/
+
+# User-specific files
+*.pbxuser
+*.xcuserstate
+
+# Xcode 12 cache files
+.project.xcworkspace/xcuserdata/
