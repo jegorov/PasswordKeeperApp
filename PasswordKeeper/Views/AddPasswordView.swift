@@ -1,44 +1,59 @@
 import SwiftUI
 
 struct AddPasswordView: View {
-    @Environment(\.presentationMode) var presentationMode
     @Binding var passwords: [PasswordItem]
-    
+
     @State private var name: String = ""
     @State private var login: String = ""
     @State private var password: String = ""
-    
+
+    @Environment(\.presentationMode) var presentationMode
+
+    private func savePassword() {
+        let newPassword = PasswordItem(id: UUID(), name: name, login: login, password: password)
+        passwords.append(newPassword)
+        PasswordStorage.savePasswords(passwords)
+    }
+
     var body: some View {
         VStack {
-            Text("Add Password")
-                .font(.largeTitle)
+            TextField("Name", text: $name)
                 .padding()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
 
-            Form {
-                TextField("Name", text: $name)
-                TextField("Login", text: $login)
-                SecureField("Password", text: $password)
-            }
-            .padding()
+            TextField("Login", text: $login)
+                .padding()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+
+            SecureField("Password", text: $password)
+                .padding()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
 
             HStack {
                 Button("Cancel") {
                     presentationMode.wrappedValue.dismiss()
                 }
+                .padding()
 
                 Spacer()
 
                 Button("Save") {
-                    let newItem = PasswordItem(id: UUID(), name: name, login: login, password: password)
-                    passwords.append(newItem)
-                    JSONFileManager.shared.save(passwords: passwords)
+                    savePassword()
                     presentationMode.wrappedValue.dismiss()
                 }
+                .padding()
                 .disabled(name.isEmpty || login.isEmpty || password.isEmpty)
             }
             .padding()
         }
         .padding()
         .frame(minWidth: 400, minHeight: 300)
+
+    }
+}
+
+struct AddPasswordView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddPasswordView(passwords: .constant([]))
     }
 }

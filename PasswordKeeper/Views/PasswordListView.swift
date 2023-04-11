@@ -41,22 +41,6 @@ struct PasswordListView: View {
                                 }
                             }.padding()
                 
-                
-//                if !selectedPasswords.isEmpty {
-//                    Button("Delete") {
-//                        deleteSelectedPasswords()
-//                    }
-//                    .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
-//                }
-//
-//                Button("Add") {
-//                    showingAddPasswordView.toggle()
-//                }
-//                .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
-//                .sheet(isPresented: $showingAddPasswordView) {
-//                    AddPasswordView(passwords: $passwords)
-//                }
-//            }
 
             List {
                 ForEach(passwords.filter { searchText.isEmpty || $0.name.lowercased().contains(searchText.lowercased()) }) { password in
@@ -99,8 +83,10 @@ struct PasswordListView: View {
     }
 
     private func loadPasswords() {
-        passwords = PasswordStorage.loadPasswords()
-    }
+         if let loadedPasswords = PasswordStorage.loadPasswords() {
+             passwords = loadedPasswords
+         }
+     }
 
     private func regenerateUUIDsAndUpdateJson() {
         var updatedPasswords = passwords.map { (password) -> PasswordItem in
@@ -108,6 +94,7 @@ struct PasswordListView: View {
         }
         PasswordStorage.savePasswords(updatedPasswords)
         passwords = updatedPasswords
+        selectedPasswords = []
     }
     
     private func deleteSelectedPasswords() {

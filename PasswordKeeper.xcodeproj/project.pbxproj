@@ -10,7 +10,6 @@
 		BE3340C629E5C5DC00C791E7 /* PasswordKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3340C529E5C5DC00C791E7 /* PasswordKeeperApp.swift */; };
 		BE3340D629E5C66E00C791E7 /* PasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3340D529E5C66E00C791E7 /* PasswordItem.swift */; };
 		BE3340DF29E5C72300C791E7 /* PasswordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3340DE29E5C72300C791E7 /* PasswordListView.swift */; };
-		BE33410B29E5E02100C791E7 /* JSONFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33410A29E5E02100C791E7 /* JSONFileManager.swift */; };
 		BE33410D29E5E05900C791E7 /* PasswordRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33410C29E5E05900C791E7 /* PasswordRowView.swift */; };
 		BE33410F29E5E35E00C791E7 /* AddPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33410E29E5E35E00C791E7 /* AddPasswordView.swift */; };
 		BE33411229E5EF4300C791E7 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33411129E5EF4300C791E7 /* CheckboxToggleStyle.swift */; };
@@ -24,7 +23,6 @@
 		BE3340CB29E5C5DE00C791E7 /* PasswordKeeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PasswordKeeper.entitlements; sourceTree = "<group>"; };
 		BE3340D529E5C66E00C791E7 /* PasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordItem.swift; sourceTree = "<group>"; };
 		BE3340DE29E5C72300C791E7 /* PasswordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordListView.swift; sourceTree = "<group>"; };
-		BE33410A29E5E02100C791E7 /* JSONFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileManager.swift; sourceTree = "<group>"; };
 		BE33410C29E5E05900C791E7 /* PasswordRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRowView.swift; sourceTree = "<group>"; };
 		BE33410E29E5E35E00C791E7 /* AddPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPasswordView.swift; sourceTree = "<group>"; };
 		BE33411129E5EF4300C791E7 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 		BE3340C429E5C5DC00C791E7 /* PasswordKeeper */ = {
 			isa = PBXGroup;
 			children = (
-				BE33410929E5E01100C791E7 /* Helpers */,
 				BE3340DD29E5C71700C791E7 /* Views */,
 				BE3340D929E5C6DB00C791E7 /* Models */,
 				BE3340C529E5C5DC00C791E7 /* PasswordKeeperApp.swift */,
@@ -90,14 +87,6 @@
 				BE33411529E5FE2200C791E7 /* SearchBar.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		BE33410929E5E01100C791E7 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				BE33410A29E5E02100C791E7 /* JSONFileManager.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,7 +161,6 @@
 				BE3340D629E5C66E00C791E7 /* PasswordItem.swift in Sources */,
 				BE33410D29E5E05900C791E7 /* PasswordRowView.swift in Sources */,
 				BE3340C629E5C5DC00C791E7 /* PasswordKeeperApp.swift in Sources */,
-				BE33410B29E5E02100C791E7 /* JSONFileManager.swift in Sources */,
 				BE33411629E5FE2200C791E7 /* SearchBar.swift in Sources */,
 				BE3340DF29E5C72300C791E7 /* PasswordListView.swift in Sources */,
 				BE33410F29E5E35E00C791E7 /* AddPasswordView.swift in Sources */,

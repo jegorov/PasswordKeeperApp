@@ -1,33 +1,38 @@
 import Foundation
 
 struct PasswordStorage {
-    static private let passwordJsonFileName = "passwords.json"
+    
+    static let fileName = "passwords"
+    static let fileExtension = "json"
 
-    static func loadPasswords() -> [PasswordItem] {
-        let fileURL = getDocumentsDirectory().appendingPathComponent(passwordJsonFileName)
+    static func getDocumentDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
 
-        if let data = try? Data(contentsOf: fileURL) {
+    static func loadPasswords() -> [PasswordItem]? {
+        let url = getDocumentDirectory().appendingPathComponent(fileName).appendingPathExtension(fileExtension)
+
+        do {
+            let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()
-
-            if let passwords = try? decoder.decode([PasswordItem].self, from: data) {
-                return passwords
-            }
+            let passwords = try decoder.decode([PasswordItem].self, from: data)
+            return passwords
+        } catch {
+            print("Failed to decode the JSON file: \(error.localizedDescription)")
+            return nil
         }
-
-        return []
     }
 
     static func savePasswords(_ passwords: [PasswordItem]) {
-        let fileURL = getDocumentsDirectory().appendingPathComponent(passwordJsonFileName)
-        let encoder = JSONEncoder()
+        let url = getDocumentDirectory().appendingPathComponent(fileName).appendingPathExtension(fileExtension)
 
-        if let data = try? encoder.encode(passwords) {
-            try? data.write(to: fileURL)
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(passwords)
+            try data.write(to: url)
+        } catch {
+            print("Failed to encode and save the JSON file: \(error.localizedDescription)")
         }
-    }
-
-    static private func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
     }
 }
