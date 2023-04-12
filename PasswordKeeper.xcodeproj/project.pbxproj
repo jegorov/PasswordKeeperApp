@@ -21,6 +21,7 @@
 		BE33411E29E61AE000C791E7 /* UtilsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33411D29E61AE000C791E7 /* UtilsRowView.swift */; };
 		BE33412029E7058E00C791E7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33411F29E7058E00C791E7 /* MainView.swift */; };
 		BE33412529E7200C00C791E7 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33412429E7200C00C791E7 /* AddItemView.swift */; };
+		BE33412C29E7308F00C791E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33412B29E7308F00C791E7 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		BE33411D29E61AE000C791E7 /* UtilsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsRowView.swift; sourceTree = "<group>"; };
 		BE33411F29E7058E00C791E7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BE33412429E7200C00C791E7 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		BE33412B29E7308F00C791E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		BE3340C429E5C5DC00C791E7 /* PasswordKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				BE33412D29E7309700C791E7 /* Utils */,
 				BE3340DD29E5C71700C791E7 /* Views */,
 				BE3340D929E5C6DB00C791E7 /* Models */,
 				BE3340C529E5C5DC00C791E7 /* PasswordKeeperApp.swift */,
@@ -105,6 +108,14 @@
 				BE33412429E7200C00C791E7 /* AddItemView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BE33412D29E7309700C791E7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BE33412B29E7308F00C791E7 /* AppDelegate.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +189,7 @@
 				BE33411A29E61A5700C791E7 /* UtilsItem.swift in Sources */,
 				BE33412029E7058E00C791E7 /* MainView.swift in Sources */,
 				BE33411429E5FE0600C791E7 /* Storage.swift in Sources */,
+				BE33412C29E7308F00C791E7 /* AppDelegate.swift in Sources */,
 				BE3340D629E5C66E00C791E7 /* PasswordItem.swift in Sources */,
 				BE33410D29E5E05900C791E7 /* PasswordRowView.swift in Sources */,
 				BE3340C629E5C5DC00C791E7 /* PasswordKeeperApp.swift in Sources */,

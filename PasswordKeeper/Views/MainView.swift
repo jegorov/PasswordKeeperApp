@@ -48,6 +48,7 @@ struct MainView: View {
                 .buttonStyle(PlainButtonStyle())
                 .frame(width: 100)
             }
+            .frame(height: 50)
             .padding(.top)
 
             if selectedTab == 0 {
@@ -59,3 +60,4 @@ struct MainView: View {
         }
     }
 }
+
