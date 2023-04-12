@@ -48,7 +48,6 @@ struct AddPasswordView: View {
             .padding()
         }
         .padding()
-        .background(Color(red: 221/255, green: 221/255, blue: 221/255))
         .frame(minWidth: 400, minHeight: 300)
 
     }
