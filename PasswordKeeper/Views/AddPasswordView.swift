@@ -17,44 +17,50 @@ struct AddPasswordView: View {
     }
 
     var body: some View {
-        VStack {
-            TextField("Name", text: $name)
-                .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+            VStack {
+                CustomTextField(placeholder: "Name", text: $name)
+                    .padding()
 
-            TextField("Login", text: $login)
-                .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                CustomTextField(placeholder: "Login", text: $login)
+                    .padding()
 
-            SecureField("Password", text: $password)
-                .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                CustomTextField(placeholder: "Password", text: $password)
+                    .padding()
 
-            HStack {
-                Button("Cancel") {
-                    presentationMode.wrappedValue.dismiss()
+                HStack {
+                    CustomButton(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: "Cancel", backgroundColor: Color.gray, isDisabled : false)
+
+                    CustomButton(action: {
+                        savePassword()
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: "Save", backgroundColor: (name.isEmpty || login.isEmpty || password.isEmpty ? Color.gray.opacity(0.5) : Color.blue), isDisabled: (name.isEmpty || login.isEmpty || password.isEmpty))
                 }
                 .padding()
-
-                Spacer()
-
-                Button("Save") {
-                    savePassword()
-                    presentationMode.wrappedValue.dismiss()
-                }
-                .padding()
-                .disabled(name.isEmpty || login.isEmpty || password.isEmpty)
             }
             .padding()
+            .frame(minWidth: 400, minHeight: 300)
         }
-        .padding()
-        .frame(minWidth: 400, minHeight: 300)
-
     }
-}
 
-struct AddPasswordView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddPasswordView(passwords: .constant([]))
+    struct AdaptiveTextFieldStyle: TextFieldStyle {
+        @Environment(\.colorScheme) var colorScheme
+
+        func _body(configuration: TextField<Self._Label>) -> some View {
+            configuration
+                .padding(8)
+                .background(colorScheme == .dark ? Color(white: 0.2) : Color(white: 0.95))
+                .cornerRadius(8)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
+        }
     }
-}
+
+    struct AddPasswordView_Previews: PreviewProvider {
+        static var previews: some View {
+            AddPasswordView(passwords: .constant([]))
+        }
+    }

@@ -19,28 +19,20 @@ struct AddUtilsView: View {
 
     var body: some View {
         VStack {
-            TextField("Value", text: $value)
+            CustomTextField(placeholder: "Value", text: $value)
                 .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-
-            TextField("Description", text: $description)
+            CustomTextField(placeholder: "Description", text: $description)
                 .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
 
             HStack {
-                Button("Cancel") {
+                CustomButton(action: {
                     presentationMode.wrappedValue.dismiss()
-                }
-                .padding()
+                }, label: "Cancel", backgroundColor: Color.gray, isDisabled : false)
 
-                Spacer()
-
-                Button("Save") {
+                CustomButton(action: {
                     saveUtility()
                     presentationMode.wrappedValue.dismiss()
-                }
-                .padding()
-                .disabled(value.isEmpty || description.isEmpty)
+                }, label: "Save", backgroundColor: (value.isEmpty || description.isEmpty ? Color.gray.opacity(0.5) : Color.blue), isDisabled: (value.isEmpty || description.isEmpty))
             }
             .padding()
         }
