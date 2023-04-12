@@ -4,7 +4,7 @@ import SwiftUI
 struct PasswordKeeperApp: App {
     var body: some Scene {
         WindowGroup {
-            PasswordListView()
+            MainView()
         }
         .commands {
             CommandGroup(replacing: .newItem, addition: {

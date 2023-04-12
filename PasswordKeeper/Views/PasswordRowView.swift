@@ -4,6 +4,8 @@ import AppKit
 struct PasswordRowView: View {
     let passwordItem: PasswordItem
     @Binding var isSelected: Bool
+    @Environment(\.colorScheme) var colorScheme
+
 
     var body: some View {
         HStack {
@@ -21,7 +23,7 @@ struct PasswordRowView: View {
             HStack {
                 Text("Login:")
                     .bold()
-                    .foregroundColor(.white)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                 Text(passwordItem.login)
                     .italic()
                     .foregroundColor(.blue)
@@ -43,7 +45,7 @@ struct PasswordRowView: View {
             HStack {
                 Text("Password:")
                     .bold()
-                    .foregroundColor(.white)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                 Text(passwordItem.password)
                     .italic()
                     .foregroundColor(.blue)

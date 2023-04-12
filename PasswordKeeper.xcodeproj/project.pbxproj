@@ -15,6 +15,11 @@
 		BE33411229E5EF4300C791E7 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33411129E5EF4300C791E7 /* CheckboxToggleStyle.swift */; };
 		BE33411429E5FE0600C791E7 /* PasswordStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33411329E5FE0600C791E7 /* PasswordStorage.swift */; };
 		BE33411629E5FE2200C791E7 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33411529E5FE2200C791E7 /* SearchBar.swift */; };
+		BE33411829E616DB00C791E7 /* UtilsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33411729E616DB00C791E7 /* UtilsView.swift */; };
+		BE33411A29E61A5700C791E7 /* UtilsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33411929E61A5700C791E7 /* UtilsItem.swift */; };
+		BE33411C29E61AC900C791E7 /* AddUtilsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33411B29E61AC900C791E7 /* AddUtilsView.swift */; };
+		BE33411E29E61AE000C791E7 /* UtilsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33411D29E61AE000C791E7 /* UtilsRowView.swift */; };
+		BE33412029E7058E00C791E7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33411F29E7058E00C791E7 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		BE33411129E5EF4300C791E7 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 		BE33411329E5FE0600C791E7 /* PasswordStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStorage.swift; sourceTree = "<group>"; };
 		BE33411529E5FE2200C791E7 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		BE33411729E616DB00C791E7 /* UtilsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsView.swift; sourceTree = "<group>"; };
+		BE33411929E61A5700C791E7 /* UtilsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsItem.swift; sourceTree = "<group>"; };
+		BE33411B29E61AC900C791E7 /* AddUtilsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUtilsView.swift; sourceTree = "<group>"; };
+		BE33411D29E61AE000C791E7 /* UtilsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsRowView.swift; sourceTree = "<group>"; };
+		BE33411F29E7058E00C791E7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,7 @@
 			children = (
 				BE3340D529E5C66E00C791E7 /* PasswordItem.swift */,
 				BE33411329E5FE0600C791E7 /* PasswordStorage.swift */,
+				BE33411929E61A5700C791E7 /* UtilsItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -85,6 +96,10 @@
 				BE33410E29E5E35E00C791E7 /* AddPasswordView.swift */,
 				BE33411129E5EF4300C791E7 /* CheckboxToggleStyle.swift */,
 				BE33411529E5FE2200C791E7 /* SearchBar.swift */,
+				BE33411729E616DB00C791E7 /* UtilsView.swift */,
+				BE33411B29E61AC900C791E7 /* AddUtilsView.swift */,
+				BE33411D29E61AE000C791E7 /* UtilsRowView.swift */,
+				BE33411F29E7058E00C791E7 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,12 +172,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE33411A29E61A5700C791E7 /* UtilsItem.swift in Sources */,
+				BE33412029E7058E00C791E7 /* MainView.swift in Sources */,
 				BE33411429E5FE0600C791E7 /* PasswordStorage.swift in Sources */,
 				BE3340D629E5C66E00C791E7 /* PasswordItem.swift in Sources */,
 				BE33410D29E5E05900C791E7 /* PasswordRowView.swift in Sources */,
 				BE3340C629E5C5DC00C791E7 /* PasswordKeeperApp.swift in Sources */,
 				BE33411629E5FE2200C791E7 /* SearchBar.swift in Sources */,
 				BE3340DF29E5C72300C791E7 /* PasswordListView.swift in Sources */,
+				BE33411829E616DB00C791E7 /* UtilsView.swift in Sources */,
+				BE33411C29E61AC900C791E7 /* AddUtilsView.swift in Sources */,
+				BE33411E29E61AE000C791E7 /* UtilsRowView.swift in Sources */,
 				BE33410F29E5E35E00C791E7 /* AddPasswordView.swift in Sources */,
 				BE33411229E5EF4300C791E7 /* CheckboxToggleStyle.swift in Sources */,
 			);

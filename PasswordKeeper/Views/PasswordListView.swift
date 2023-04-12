@@ -6,6 +6,8 @@ struct PasswordListView: View {
     @State private var selectedPasswords: Set<UUID> = []
     @State private var showingAddPasswordView = false
     @State private var showingDeleteConfirmation = false
+    @State private var selection: Int? = nil
+
     
     
     private var selectedCount: Int {
@@ -13,60 +15,58 @@ struct PasswordListView: View {
       }
     
     var body: some View {
-        VStack {
-            HStack {
-                SearchBar(text: $searchText)
-                    .padding(7)
-             //                    .background(Color(.systemGray6))
-                                 .cornerRadius(8)
-                                 .padding(.horizontal, 10)
+            VStack {
+                    VStack {
+                        HStack {
+                            SearchBar(text: $searchText)
+                                .padding(7)
+                                .cornerRadius(8)
+                                .padding(.horizontal, 10)
 
-                Spacer()
-                
-                Button(action: {
-                    showingAddPasswordView.toggle()
-                               }) {
-                                   Label("Add", systemImage: "plus")
-                               }
-                               .sheet(isPresented: $showingAddPasswordView) {
-                                                  AddPasswordView(passwords: $passwords)
-                                              }
+                            Spacer()
 
-                if selectedCount > 0 {
-                                    Button(action: {
-                                        showingDeleteConfirmation.toggle()
-                                    }) {
-                                        Label("Delete", systemImage: "trash")
-                                    }
+                            Button(action: {
+                                showingAddPasswordView.toggle()
+                            }) {
+                                Label("Add", systemImage: "plus")
+                            }
+                            .sheet(isPresented: $showingAddPasswordView) {
+                                AddPasswordView(passwords: $passwords)
+                            }
+
+                            if selectedCount > 0 {
+                                Button(action: {
+                                    showingDeleteConfirmation.toggle()
+                                }) {
+                                    Label("Delete", systemImage: "trash")
                                 }
-                            }.padding()
-                
+                            }
+                        }.padding()
 
-            List {
-                ForEach(passwords.filter { searchText.isEmpty || $0.name.lowercased().contains(searchText.lowercased()) }) { password in
-                    PasswordRowView(passwordItem: password, isSelected: isSelectedBinding(for: password))
-                }
-            }
-            .onAppear {
-                loadPasswords()
-            }
-
-            Spacer()
-
-            HStack {
+                        List {
+                            ForEach(passwords.filter { searchText.isEmpty || $0.name.lowercased().contains(searchText.lowercased()) }) { password in
+                                PasswordRowView(passwordItem: password, isSelected: isSelectedBinding(for: password))
+                            }
+                        }
+                        .onAppear {
+                            loadPasswords()
+                        }
+                    }
                 Spacer()
+                HStack {
+                    Spacer()
 
-                Button("Regenerate UUIDs") {
-                    regenerateUUIDs()
+                    Button("Regenerate UUIDs") {
+                        regenerateUUIDs()
+                    }
+                    .padding()
                 }
-                .padding()
+            }
+            .frame(minWidth: 800, minHeight: 600)
+            .alert(isPresented: $showingDeleteConfirmation) {
+                Alert(title: Text("Are you sure you want to delete these passwords?"), message: Text("You are about to delete \(selectedCount) password(s). This action cannot be undone."), primaryButton: .destructive(Text("Delete"), action: deleteSelectedPasswords), secondaryButton: .cancel())
             }
         }
-        .frame(minWidth: 800, minHeight: 600)
-              .alert(isPresented: $showingDeleteConfirmation) {
-                  Alert(title: Text("Are you sure you want to delete these passwords?"), message: Text("You are about to delete \(selectedCount) password(s). This action cannot be undone."), primaryButton: .destructive(Text("Delete"), action: deleteSelectedPasswords), secondaryButton: .cancel())
-              }
-    }
 
 
     private func isSelectedBinding(for password: PasswordItem) -> Binding<Bool> {
