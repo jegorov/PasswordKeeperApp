@@ -24,6 +24,8 @@
 		BE33412C29E7308F00C791E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33412B29E7308F00C791E7 /* AppDelegate.swift */; };
 		BE33413029E74AFC00C791E7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33412F29E74AFC00C791E7 /* CustomTextField.swift */; };
 		BE33413229E74B0D00C791E7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33413129E74B0D00C791E7 /* CustomButton.swift */; };
+		BE33413429E7527900C791E7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE33413329E7527900C791E7 /* Info.plist */; };
+		BE33413629E7559300C791E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE33413529E7559300C791E7 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		BE33412B29E7308F00C791E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE33412F29E74AFC00C791E7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		BE33413129E74B0D00C791E7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		BE33413329E7527900C791E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE33413529E7559300C791E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 		BE3340B929E5C5DC00C791E7 = {
 			isa = PBXGroup;
 			children = (
+				BE33413529E7559300C791E7 /* Assets.xcassets */,
+				BE33413329E7527900C791E7 /* Info.plist */,
 				BE3340C429E5C5DC00C791E7 /* PasswordKeeper */,
 				BE3340C329E5C5DC00C791E7 /* Products */,
 			);
@@ -190,6 +196,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE33413629E7559300C791E7 /* Assets.xcassets in Resources */,
+				BE33413429E7527900C791E7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
