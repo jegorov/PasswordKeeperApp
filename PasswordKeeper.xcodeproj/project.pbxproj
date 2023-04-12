@@ -20,6 +20,7 @@
 		BE33411C29E61AC900C791E7 /* AddUtilsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33411B29E61AC900C791E7 /* AddUtilsView.swift */; };
 		BE33411E29E61AE000C791E7 /* UtilsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33411D29E61AE000C791E7 /* UtilsRowView.swift */; };
 		BE33412029E7058E00C791E7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33411F29E7058E00C791E7 /* MainView.swift */; };
+		BE33412529E7200C00C791E7 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33412429E7200C00C791E7 /* AddItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BE33411B29E61AC900C791E7 /* AddUtilsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUtilsView.swift; sourceTree = "<group>"; };
 		BE33411D29E61AE000C791E7 /* UtilsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsRowView.swift; sourceTree = "<group>"; };
 		BE33411F29E7058E00C791E7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BE33412429E7200C00C791E7 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,6 @@
 		BE3340C429E5C5DC00C791E7 /* PasswordKeeper */ = {
 			isa = PBXGroup;
 			children = (
-				BE33412129E71C3400C791E7 /* Utils */,
 				BE3340DD29E5C71700C791E7 /* Views */,
 				BE3340D929E5C6DB00C791E7 /* Models */,
 				BE3340C529E5C5DC00C791E7 /* PasswordKeeperApp.swift */,
@@ -101,15 +102,9 @@
 				BE33411B29E61AC900C791E7 /* AddUtilsView.swift */,
 				BE33411D29E61AE000C791E7 /* UtilsRowView.swift */,
 				BE33411F29E7058E00C791E7 /* MainView.swift */,
+				BE33412429E7200C00C791E7 /* AddItemView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		BE33412129E71C3400C791E7 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +184,7 @@
 				BE33411629E5FE2200C791E7 /* SearchBar.swift in Sources */,
 				BE3340DF29E5C72300C791E7 /* PasswordListView.swift in Sources */,
 				BE33411829E616DB00C791E7 /* UtilsView.swift in Sources */,
+				BE33412529E7200C00C791E7 /* AddItemView.swift in Sources */,
 				BE33411C29E61AC900C791E7 /* AddUtilsView.swift in Sources */,
 				BE33411E29E61AE000C791E7 /* UtilsRowView.swift in Sources */,
 				BE33410F29E5E35E00C791E7 /* AddPasswordView.swift in Sources */,
