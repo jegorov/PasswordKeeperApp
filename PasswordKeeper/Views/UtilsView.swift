@@ -58,7 +58,6 @@ struct UtilsView: View {
                            }
                            .padding()
                        }
-                       .padding()
         }
         .frame(minWidth: 800, minHeight: 600)
         .alert(isPresented: $showingDeleteConfirmation) {
