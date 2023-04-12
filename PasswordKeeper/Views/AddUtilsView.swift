@@ -11,7 +11,9 @@ struct AddUtilsView: View {
     private func saveUtility() {
         let newUtility = UtilsItem(id: UUID(), value: value, description: description)
         utils.append(newUtility)
-        // Save utils if needed
+        
+        Storage.save(utils, for: StorageType.utils)
+
     }
 
     var body: some View {

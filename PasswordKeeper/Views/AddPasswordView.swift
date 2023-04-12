@@ -12,7 +12,8 @@ struct AddPasswordView: View {
     private func savePassword() {
         let newPassword = PasswordItem(id: UUID(), name: name, login: login, password: password)
         passwords.append(newPassword)
-        PasswordStorage.savePasswords(passwords)
+        
+        Storage.save(passwords, for: StorageType.passwords)
     }
 
     var body: some View {
